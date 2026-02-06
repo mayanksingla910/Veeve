@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import MorePopover from "./morePopover";
+import { useRouter } from "next/navigation";
 
 type Props = {
   url: string;
@@ -11,9 +12,18 @@ type Props = {
 };
 
 function Card({ url, width, height }: Props) {
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    router.push("/video/id");
+  };
+
   return (
-    <div className="rounded-lg sm:rounded-2xl break-inside-avoid">
-      <div className="relative overflow-hidden rounded-2xl group cursor-pointer">
+    <div className="rounded-sm sm:rounded-2xl break-inside-avoid">
+      <div
+        onClick={handleSubmit}
+        className="relative overflow-hidden rounded-2xl group cursor-pointer"
+      >
         <Image
           src={url}
           alt="Masonry Item"
