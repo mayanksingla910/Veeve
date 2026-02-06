@@ -14,7 +14,7 @@ export default function AuthenticatedLayout({
       <div className="flex flex-col flex-1 md:pl-18">
         <Topbar />
 
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 md:mb-0 mb-12">{children}</main>
       </div>
       <BottomBar />
     </div>
