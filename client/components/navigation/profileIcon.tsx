@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import AccountPopover from "./accountPopover";
 
 function ProfileIcon() {
   return (
@@ -15,9 +16,7 @@ function ProfileIcon() {
               transition-color ease-in-out duration-150 hover:bg-muted hidden
               `}
             >
-              <Avatar
-                className={`font-bold size-10`}
-              >
+              <Avatar className={`font-bold size-10`}>
                 <AvatarImage src="" />
                 <AvatarFallback>M</AvatarFallback>
               </Avatar>
@@ -27,7 +26,9 @@ function ProfileIcon() {
           <TooltipContent>Accounts</TooltipContent>
         </Tooltip>
       </PopoverTrigger>
-      <PopoverContent className="mr-3"></PopoverContent>
+      <PopoverContent className="w-fit p-2 mr-3">
+        <AccountPopover />
+      </PopoverContent>
     </Popover>
   );
 }

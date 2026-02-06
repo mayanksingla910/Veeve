@@ -16,12 +16,36 @@ import {
 
 const data = [
   { title: "Home", icon: <HomeIcon className="w-full h-full" />, href: "/" },
-  { title: "Explore", icon: <Compass className="w-full h-full" />, href: "/explore" },
-  { title: "Jobs", icon: <BriefcaseBusiness className="w-full h-full" />, href: "/jobs" },
-  { title: "Create", icon: <SquarePlus className="w-full h-full" />, href: "#" },
-  { title: "Messages", icon: <MessageCircle className="w-full h-full" />, href: "/chats" },
-  { title: "Notifications", icon: <Bell className="w-full h-full" />, href: "#" },
-  { title: "Settings", icon: <Settings className="w-full h-full" />, href: "/settings" },
+  {
+    title: "Explore",
+    icon: <Compass className="w-full h-full" />,
+    href: "/explore",
+  },
+  {
+    title: "Jobs",
+    icon: <BriefcaseBusiness className="w-full h-full" />,
+    href: "/jobs",
+  },
+  {
+    title: "Create",
+    icon: <SquarePlus className="w-full h-full" />,
+    href: "/create",
+  },
+  {
+    title: "Messages",
+    icon: <MessageCircle className="w-full h-full" />,
+    href: "/chats",
+  },
+  {
+    title: "Notifications",
+    icon: <Bell className="w-full h-full" />,
+    href: "#",
+  },
+  {
+    title: "Settings",
+    icon: <Settings className="w-full h-full" />,
+    href: "/settings",
+  },
 ];
 
 export default function Sidebar() {

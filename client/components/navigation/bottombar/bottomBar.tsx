@@ -13,7 +13,7 @@ const data = [
   {
     title: "Create",
     icon: <SquarePlus className="" />,
-    href: "#",
+    href: "/create",
   },
   {
     title: "Jobs",
