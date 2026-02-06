@@ -18,8 +18,8 @@ function Page() {
       {
         root: null,
         threshold: 0,
-        rootMargin: "-150px 0px 0px 0px",
-      }
+        rootMargin: "-250px 0px 0px 0px",
+      },
     );
 
     if (userDetailRef.current) {
@@ -32,7 +32,7 @@ function Page() {
   }, []);
 
   return (
-    <div className=" min-h-screen transition-all">
+    <div className=" transition-all">
       <motion.div
         initial={false}
         animate={{
@@ -43,15 +43,15 @@ function Page() {
           type: "spring",
           stiffness: 300,
           damping: 30,
-          duration: 0.05,
+          duration: 0.1,
         }}
-        className={`sticky top-16 md:top-19 left-0 right-0 z-40 bg-background `}
+        className={`sticky top-14 md:top-17 left-0 right-0 z-40 bg-background `}
       >
         <MiniProfile />
       </motion.div>
 
-      <div className={`p-2 md:p-5 -translate-y-6`}>
-        <div ref={userDetailRef} className="-translate-y-8">
+      <div className={`p-2 md:p-5 -translate-y-14`}>
+        <div ref={userDetailRef}>
           <Userdetail />
         </div>
 

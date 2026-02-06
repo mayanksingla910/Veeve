@@ -209,7 +209,7 @@ function TabsContents({
     type: 'spring',
     stiffness: 300,
     damping: 30,
-    bounce: 5,
+    bounce: 0.2,
     restDelta: 0.01,
   },
   ...props
