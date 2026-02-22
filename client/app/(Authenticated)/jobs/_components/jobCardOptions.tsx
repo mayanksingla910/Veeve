@@ -42,7 +42,7 @@ function JobCardOptions({
   popOver?: boolean;
 }) {
   return (
-    <TooltipProvider >
+    <TooltipProvider>
       <div className={`flex gap-1 ${popOver ? "flex-col" : "flex-row"}`}>
         {options.map((option) => (
           <Tooltip key={option.label}>
@@ -50,18 +50,21 @@ function JobCardOptions({
               <Button
                 size={popOver ? "default" : "icon"}
                 variant={option.variant || "ghost"}
-                className={`active:scale-90 transition-transform ${popOver ? "w-full justify-start" : ""}`}
+                className={`active:scale-90 transition-all ${popOver ? "w-full justify-start active:bg-muted/70" : ""}`}
                 // onClick={() => option.action(jobId)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
               >
                 {option.icon}
-                {popOver && <p className="text-xs text-muted-foreground">
-                  {option.label}
-                </p>}
+                {popOver && (
+                  <p className="text-xs text-muted-foreground">
+                    {option.label}
+                  </p>
+                )}
               </Button>
             </TooltipTrigger>
-            {!popOver && (
-              <TooltipContent side="bottom">{option.label}</TooltipContent>
-            )}
+            {!popOver && <TooltipContent>{option.label}</TooltipContent>}
           </Tooltip>
         ))}
       </div>

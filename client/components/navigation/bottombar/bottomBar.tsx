@@ -37,7 +37,7 @@ function BottomBar() {
           {item.icon}
         </Link>
       ))}
-      <Link href={"/me"} className="active:scale-85 transition-transform">
+      <Link href={"/@me"} className="active:scale-85 transition-transform">
         <Avatar>
           <AvatarImage src="" />
           <AvatarFallback>M</AvatarFallback>

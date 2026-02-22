@@ -36,7 +36,7 @@ function Page() {
       <motion.div
         initial={false}
         animate={{
-          y: isScrolled ? 0 : "-100%",
+          y: isScrolled ? 0 : "-120%",
           opacity: 1,
         }}
         transition={{
@@ -50,7 +50,7 @@ function Page() {
         <MiniProfile />
       </motion.div>
 
-      <div className={`p-2 md:p-5 -translate-y-14`}>
+      <div className={`p-2 -translate-y-14`}>
         <div ref={userDetailRef}>
           <Userdetail />
         </div>

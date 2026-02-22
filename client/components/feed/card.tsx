@@ -19,7 +19,7 @@ function Card({ url, width, height }: Props) {
   };
 
   return (
-    <div className="rounded-sm sm:rounded-2xl break-inside-avoid">
+    <div className="rounded-sm sm:rounded-2xl break-inside-avoid overflow-hidden">
       <div
         onClick={handleSubmit}
         className="relative overflow-hidden rounded-2xl group cursor-pointer"

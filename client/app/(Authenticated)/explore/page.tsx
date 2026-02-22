@@ -1,11 +1,9 @@
-import React from 'react'
+import RichTextEditor from "@/components/richTextEditor";
 
 function page() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div>
+    <RichTextEditor isEditable={true} />
+  </div>;
 }
 
-export default page
+export default page;

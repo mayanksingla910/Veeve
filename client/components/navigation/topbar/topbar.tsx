@@ -1,6 +1,6 @@
 import Searchbar from "../searchbar";
 import ProfileIcon from "../profileIcon";
-import TopComponents from "../topcomponents";
+import TopComponents from "../topComponents";
 
 function Topbar() {
   return (

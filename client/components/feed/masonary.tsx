@@ -62,7 +62,7 @@ export default function MasonryGrid({
     <div
       ref={containerRef}
       className={cn(
-        "flex w-full gap-1 md:gap-2 lg:gap-4 items-start md:p-4 p-1 py-3",
+        "flex w-full gap-1 md:gap-2 lg:gap-4 items-start  py-3",
         className,
       )}
     >

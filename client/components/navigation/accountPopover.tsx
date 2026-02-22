@@ -5,7 +5,7 @@ import Link from "next/link";
 function AccountPopover() {
   return (
     <div className="flex flex-col gap-3 font-medium min-w-3xs">
-      <Link href="/me" className="p-2 flex gap-2 items-center hover:bg-muted/80 active:bg-muted/60 active:scale-95 transition-transform cursor-pointer rounded-lg">
+      <Link href="/@me" className="p-2 flex gap-2 items-center hover:bg-muted/80 active:bg-muted/60 active:scale-95 transition-transform cursor-pointer rounded-lg">
         <Avatar className="size-16 text-xl">
           <AvatarImage src="" />
           <AvatarFallback>M</AvatarFallback>
