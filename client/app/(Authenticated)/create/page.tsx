@@ -9,6 +9,7 @@ import VideoInfo from "./_components/videoInfo";
 import { VideoPostFormValues, videoPostSchema } from "@/types/videoSchema";
 import { useDropzone } from "react-dropzone";
 import { useCallback } from "react";
+import { useRouter } from "next/navigation";
 
 export default function PostVideoPage() {
   const methods = useForm<VideoPostFormValues>({
@@ -19,6 +20,8 @@ export default function PostVideoPage() {
       tags: "",
     },
   });
+
+  const router = useRouter();
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
@@ -52,7 +55,7 @@ export default function PostVideoPage() {
       <form
         {...getRootProps()}
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="p-8 py-4 h-full"
+        className="p-4 py-4 h-full"
       >
         <div className="sticky top-16 md:top-20 z-40 bg-background flex items-center justify-between">
           <div className="flex gap-3 items-center">
@@ -60,7 +63,8 @@ export default function PostVideoPage() {
               type="button"
               size="icon"
               variant="ghost"
-              className="size-12 hover:bg-muted active:scale-95"
+              onClick={() => router.back()}
+              className="size-12 hover:bg-muted active:scale-95 active:bg-muted"
             >
               <MoveLeft className="size-8" />
             </Button>
