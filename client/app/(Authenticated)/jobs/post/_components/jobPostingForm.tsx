@@ -33,11 +33,14 @@ const variants = {
   exit: (direction: number) => ({ x: direction > 0 ? -40 : 40, opacity: 0 }),
 };
 
-function JobPostingForm({ onDirtyChange, onSaveDraftReady }: JobPostingFormProps) {
+function JobPostingForm({
+  onDirtyChange,
+  onSaveDraftReady,
+}: JobPostingFormProps) {
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1);
   const form = useForm<JobFormData, unknown, JobFormData>({
-  resolver: zodResolver(jobFormSchema) as Resolver<JobFormData>,
+    resolver: zodResolver(jobFormSchema) as Resolver<JobFormData>,
     defaultValues: {
       jobRole: "",
       jobSummary: "",
@@ -99,10 +102,10 @@ function JobPostingForm({ onDirtyChange, onSaveDraftReady }: JobPostingFormProps
     setStep((s) => Math.max(s - 1, 1));
   }
 
-// Make sure this is typed against the inferred schema type
-async function onSubmit(data: JobFormData) {
-  console.log("Submitting:", data);
-}
+  // Make sure this is typed against the inferred schema type
+  async function onSubmit(data: JobFormData) {
+    console.log("Submitting:", data);
+  }
 
   return (
     <FormProvider {...form}>

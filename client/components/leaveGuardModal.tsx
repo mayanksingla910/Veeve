@@ -32,16 +32,11 @@ export function LeaveGuardModal({
   return (
     <AlertDialog open={open}>
       <AlertDialogContent>
-        <AlertDialogHeader>
+        <AlertDialogHeader className="items-center">
           <AlertDialogTitle>{title}</AlertDialogTitle>
           <AlertDialogDescription>{description}</AlertDialogDescription>
         </AlertDialogHeader>
-        <AlertDialogFooter className="flex-col-reverse sm:flex-row gap-2">
-          {showSaveDraft && (
-            <Button variant="outline" onClick={onSaveAndLeave}>
-              Save Draft
-            </Button>
-          )}
+        <AlertDialogFooter className="flex-col-reverse sm:grid sm:grid-cols-3 gap-2">
           <Button
             variant="ghost"
             className="text-destructive hover:text-destructive"
@@ -49,7 +44,14 @@ export function LeaveGuardModal({
           >
             Discard & Leave
           </Button>
-          <Button onClick={onKeepEditing}>Keep Editing</Button>
+          <div className="grid grid-cols-2 sm:col-span-2 gap-2">
+            {showSaveDraft && (
+              <Button variant="outline" onClick={onSaveAndLeave}>
+                Save Draft
+              </Button>
+            )}
+            <Button onClick={onKeepEditing}>Keep Editing</Button>
+          </div>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

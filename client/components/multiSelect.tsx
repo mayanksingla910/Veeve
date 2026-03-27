@@ -41,7 +41,8 @@ export function MultiSelect({
 
   // Options not yet selected
   const filtered = options.filter(
-    (o) => !value.includes(o) && o.toLowerCase().includes(trimmed.toLowerCase())
+    (o) =>
+      !value.includes(o) && o.toLowerCase().includes(trimmed.toLowerCase()),
   );
 
   // Show "create" option only if typed value isn't already an option or selected
@@ -123,7 +124,7 @@ export function MultiSelect({
                       <Check
                         className={cn(
                           "size-3.5",
-                          value.includes(option) ? "opacity-100" : "opacity-0"
+                          value.includes(option) ? "opacity-100" : "opacity-0",
                         )}
                       />
                       {option}

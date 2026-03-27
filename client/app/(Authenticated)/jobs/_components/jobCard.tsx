@@ -12,7 +12,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import JobDialog from "./JobDialog";
+import JobDetailsDialog from "./JobDetailsDialog";
 
 interface JobCardProps {
   job: Job;
@@ -82,8 +82,8 @@ function JobCard({ job }: JobCardProps) {
           </CardContent>
         </Card>
       </DialogTrigger>
-      <DialogContent className="min-w-6xl">
-        <JobDialog />
+      <DialogContent showCloseButton={false} className="min-w-4xl">
+        <JobDetailsDialog job={job} />
       </DialogContent>
     </Dialog>
   );

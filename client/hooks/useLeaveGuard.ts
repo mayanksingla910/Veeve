@@ -1,4 +1,3 @@
-// hooks/useLeaveGuard.ts
 "use client";
 
 import { useState, useEffect, useCallback } from "react";

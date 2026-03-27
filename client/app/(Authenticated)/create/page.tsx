@@ -2,14 +2,14 @@
 
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MoveLeft, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import VideoUpload from "./_components/videoUpload";
 import VideoInfo from "./_components/videoInfo";
 import { VideoPostFormValues, videoPostSchema } from "@/types/videoSchema";
 import { useDropzone } from "react-dropzone";
 import { useCallback } from "react";
-import { useRouter } from "next/navigation";
+import BackPageButton from "@/components/backPageButton";
 
 export default function PostVideoPage() {
   const methods = useForm<VideoPostFormValues>({
@@ -20,8 +20,6 @@ export default function PostVideoPage() {
       tags: "",
     },
   });
-
-  const router = useRouter();
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
@@ -59,15 +57,7 @@ export default function PostVideoPage() {
       >
         <div className="sticky top-16 md:top-20 z-40 bg-background flex items-center justify-between">
           <div className="flex gap-3 items-center">
-            <Button
-              type="button"
-              size="icon"
-              variant="ghost"
-              onClick={() => router.back()}
-              className="size-12 hover:bg-muted active:scale-95 active:bg-muted"
-            >
-              <MoveLeft className="size-8" />
-            </Button>
+            <BackPageButton />
             <h1 className="text-3xl font-bold tracking-tight">Post Video</h1>
           </div>
 
